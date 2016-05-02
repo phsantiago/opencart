@@ -8,6 +8,9 @@ class Image {
 	private $mime;
 
 	public function __construct($file) {
+		if(function_exists("gd_info")){
+			die("Please install the GD library: http://php.net/manual/en/image.installation.php");
+		}
 		if (file_exists($file)) {
 			$this->file = $file;
 
